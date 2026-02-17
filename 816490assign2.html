@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment 2</title>
+
+    <style>
+        h1 {
+            color: green;
+        }
+
+        p {
+            background-color: lightblue;
+            font-family: Algerian;
+            font-size: 45px;
+        }
+
+        #section1 {
+            background-image: url("myimage.jpg");
+            background-size: cover;
+            padding: 20px;
+        }
+
+        #section2 {
+            background-image: url("skytrain.jpg");
+            background-size: cover;
+            padding: 20px;
+        }
+    </style>
+
+    <script>
+        // Function for Section 3
+        function calculateAverage() {
+
+            // Prompt user to enter two numbers
+            let num1 = parseInt(prompt("Enter first number (20 - 350):"));
+            let num2 = parseInt(prompt("Enter second number (20 - 350):"));
+
+            // Check if numbers are valid
+            if (num1 < 20 || num1 > 350 || num2 < 20 || num2 > 350) {
+                alert("Numbers must be between 20 and 350.");
+                return;
+            }
+
+            // Calculate average
+            let average = (num1 + num2) / 2;
+
+            // Generate random number between 50 and 400
+            let randomNumber = Math.floor(Math.random() * (400 - 50 + 1)) + 50;
+
+            let message = "";
+
+            // Compare average with random number
+            if (average > randomNumber) {
+                message = "Your average (" + average + ") is GREATER than system number (" + randomNumber + ")";
+            } 
+            else if (average < randomNumber) {
+                message = "Your average (" + average + ") is LESS than system number (" + randomNumber + ")";
+            } 
+            else {
+                message = "Your average is EQUAL to system number (" + randomNumber + ")";
+            }
+
+            // Display result in textbox
+            document.getElementById("resultBox").value = message;
+        }
+
+        // Function to change image using radio buttons
+        function changeImage(imageName) {
+            document.getElementById("displayImage").src = imageName;
+        }
+    </script>
+</head>
+
+<body>
+
+
+<div id="section1">
+
+    <h1>Section 1</h1>
+
+    <p>This is my webpage for Assignment 2</p>
+
+    <!-- Nested List -->
+    <ul type="square">
+        <li>Planets
+            <ol type="i">
+                <li>Jupiter
+                    <ol type="a">
+                        <li>Largest Planet</li>
+                        <li>Gas Giant</li>
+                    </ol>
+                </li>
+                <li>Mars</li>
+            </ol>
+        </li>
+    </ul>
+
+    <!-- Video about Jupiter -->
+    <h3>Video about Jupiter</h3>
+    <iframe width="400" height="300"
+        src="https://www.youtube.com/embed/PtkqwslbLY8"
+        frameborder="0" allowfullscreen>
+    </iframe>
+
+    <br><br>
+
+    <!-- Bookmark link to Section 2 -->
+    <a href="#section2">Go to Section 2</a>
+
+</div>
+
+<!-- Horizontal Line -->
+<hr style="width:60%; height:30px; background-color:lightgreen;">
+
+
+<div id="section2">
+
+    <h1>Section 2</h1>
+
+    <!-- Radio Buttons -->
+    <input type="radio" name="image" onclick="changeImage('yourphoto.jpg')"> My Photo
+    <input type="radio" name="image" onclick="changeImage('bird.jpg')"> Bird
+    <input type="radio" name="image" onclick="changeImage('fish.jpg')"> Fish
+
+    <br><br>
+
+    <!-- Image Display -->
+    <img id="displayImage" src="yourphoto.jpg" width="300" height="250">
+
+</div>
+
+
+<h1>Section 3</h1>
+
+<button onclick="calculateAverage()">Click to Enter Numbers</button>
+
+<br><br>
+
+<input type="text" id="resultBox" size="70">
+
+</body>
+</html>
