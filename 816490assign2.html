@@ -31,28 +31,28 @@
     </style>
 
     <script>
-        // Function for Section 3
+        
         function calculateAverage() {
 
-            // Prompt user to enter two numbers
+        
             let num1 = parseInt(prompt("Enter first number (20 - 350):"));
             let num2 = parseInt(prompt("Enter second number (20 - 350):"));
 
-            // Check if numbers are valid
+        
             if (num1 < 20 || num1 > 350 || num2 < 20 || num2 > 350) {
                 alert("Numbers must be between 20 and 350.");
                 return;
             }
 
-            // Calculate average
+            
             let average = (num1 + num2) / 2;
 
-            // Generate random number between 50 and 400
+            
             let randomNumber = Math.floor(Math.random() * (400 - 50 + 1)) + 50;
 
             let message = "";
 
-            // Compare average with random number
+           
             if (average > randomNumber) {
                 message = "Your average (" + average + ") is GREATER than system number (" + randomNumber + ")";
             } 
@@ -63,11 +63,11 @@
                 message = "Your average is EQUAL to system number (" + randomNumber + ")";
             }
 
-            // Display result in textbox
+            
             document.getElementById("resultBox").value = message;
         }
 
-        // Function to change image using radio buttons
+        
         function changeImage(imageName) {
             document.getElementById("displayImage").src = imageName;
         }
@@ -83,7 +83,7 @@
 
     <p>This is my webpage for Assignment 2</p>
 
-    <!-- Nested List -->
+    
     <ul type="square">
         <li>Planets
             <ol type="i">
@@ -98,7 +98,7 @@
         </li>
     </ul>
 
-    <!-- Video about Jupiter -->
+    
     <h3>Video about Jupiter</h3>
     <iframe width="400" height="300"
         src="https://www.youtube.com/embed/PtkqwslbLY8"
@@ -107,12 +107,12 @@
 
     <br><br>
 
-    <!-- Bookmark link to Section 2 -->
+    
     <a href="#section2">Go to Section 2</a>
 
 </div>
 
-<!-- Horizontal Line -->
+
 <hr style="width:60%; height:30px; background-color:lightgreen;">
 
 
@@ -120,14 +120,14 @@
 
     <h1>Section 2</h1>
 
-    <!-- Radio Buttons -->
+    
     <input type="radio" name="image" onclick="changeImage('myphoto.jpg')"> My Photo
     <input type="radio" name="image" onclick="changeImage('bird.jpg')"> Bird
     <input type="radio" name="image" onclick="changeImage('fish.jpg')"> Fish
 
     <br><br>
 
-    <!-- Image Display -->
+    
     <img id="displayImage" src="myphoto.jpg" width="300" height="250">
 
 </div>
@@ -144,4 +144,5 @@
 </body>
 
 </html>
+
 
